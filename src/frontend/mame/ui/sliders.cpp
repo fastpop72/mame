@@ -110,32 +110,32 @@ void menu_sliders::handle()
 		}
 
 		// if we are selecting an invalid item and we are hidden, skip to the next one
-		//else if (m_hidden)
-		//{
-		//	// if we got here via up or page up, select the previous item
-		//	if (menu_event->iptkey == IPT_UI_UP || menu_event->iptkey == IPT_UI_PAGE_UP)
-		//	{
-		//		if (is_first_selected())
-		//			select_last_item();
-		//		else
-		//		{
-		//			set_selected_index(selected_index() - 1);
-		//			validate_selection(-1);
-		//		}
-		//	}
+		else if (m_hidden)
+		{
+			// if we got here via up or page up, select the previous item
+			if (menu_event->iptkey == IPT_UI_UP || menu_event->iptkey == IPT_UI_PAGE_UP)
+			{
+				if (is_first_selected())
+					select_last_item();
+				else
+				{
+					set_selected_index(selected_index() - 1);
+					validate_selection(-1);
+				}
+			}
 
-		//	// otherwise select the next item
-		//	else if (menu_event->iptkey == IPT_UI_DOWN || menu_event->iptkey == IPT_UI_PAGE_DOWN)
-		//	{
-		//		if (is_last_selected())
-		//			select_first_item();
-		//		else
-		//		{
-		//			set_selected_index(selected_index() + 1);
-		//			validate_selection(1);
-		//		}
-		//	}
-		//}
+			// otherwise select the next item
+			else if (menu_event->iptkey == IPT_UI_DOWN || menu_event->iptkey == IPT_UI_PAGE_DOWN)
+			{
+				if (is_last_selected())
+					select_first_item();
+				else
+				{
+					set_selected_index(selected_index() + 1);
+					validate_selection(1);
+				}
+			}
+		}
 	}
 }
 
