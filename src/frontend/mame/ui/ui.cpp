@@ -1243,7 +1243,7 @@ uint32_t mame_ui_manager::handler_ingame(render_container &container)
 	if (machine().ioport().type_pressed(IPT_UI_FAST_FORWARD))
 	{
 		machine().video().set_fastforward(true);
-		show_fps_temp(0.5);
+		// show_fps_temp(0.5);
 	}
 	else
 		machine().video().set_fastforward(false);
