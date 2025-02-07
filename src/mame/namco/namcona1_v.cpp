@@ -557,7 +557,8 @@ u32 namcona1_state::screen_update(screen_device &screen, bitmap_ind16 &bitmap, c
 
 	// guess for X-Day 2 (flames in attract), seems wrong for Emeraldia but unsure
 //  bitmap.fill(0xff, cliprect); /* background color? */
-	bitmap.fill((m_vreg[0xba / 2] & 0xf) << 8, cliprect);
+//	bitmap.fill((m_vreg[0xba / 2] & 0xf) << 8, cliprect);
+	bitmap.fill(m_palette->black_pen(), cliprect);
 
 	if (m_vreg[0x8e / 2] && screen_enabled(display_rect) == true)
 	{
